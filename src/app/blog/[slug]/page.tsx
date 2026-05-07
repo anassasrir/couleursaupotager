@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { Calendar, ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic';
+
 interface PostPageProps {
   params: Promise<{
     slug: string;
@@ -45,7 +47,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
       <div className="prose prose-green prose-lg max-w-none text-gray-700 leading-relaxed">
         {/* For now, we just render the content as text. In the future, this would be Markdown. */}
-        {post.content.split('\n').map((paragraph, index) => (
+        {post.content.split('\n').map((paragraph: string, index: number) => (
           <p key={index} className="mb-6">{paragraph}</p>
         ))}
       </div>

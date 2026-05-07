@@ -1,6 +1,8 @@
 import { getNotes } from "@/lib/actions/notes";
 import { NotesManager } from "@/components/notes/NotesManager";
 
+export const dynamic = 'force-dynamic';
+
 export default async function NotesPage() {
   const notes = await getNotes();
 

@@ -1,6 +1,9 @@
 import { getPosts } from "@/lib/actions/blog";
 import { PostCard } from "@/components/blog/PostCard";
 import { BookOpen } from "lucide-react";
+import { Post } from "@prisma/client";
+
+export const dynamic = 'force-dynamic';
 
 export default async function BlogPage() {
   const posts = await getPosts();
@@ -14,7 +17,7 @@ export default async function BlogPage() {
 
       {posts.length > 0 ? (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {posts.map((post: Post) => (
             <PostCard key={post.id} post={post} />
           ))}
         </div>

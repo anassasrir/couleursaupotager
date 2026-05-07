@@ -2,6 +2,9 @@ import { getEvents } from "@/lib/actions/events";
 import { Calendar as CalendarIcon, Plus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card, CardBody } from "@/components/ui/Card";
+import { Event } from "@prisma/client";
+
+export const dynamic = 'force-dynamic';
 
 export default async function CalendarPage() {
   const events = await getEvents();
@@ -21,7 +24,7 @@ export default async function CalendarPage() {
 
       <div className="grid gap-6">
         {events.length > 0 ? (
-          events.map((event) => (
+          events.map((event: Event) => (
             <Card key={event.id}>
               <CardBody className="flex justify-between items-center">
                 <div>
