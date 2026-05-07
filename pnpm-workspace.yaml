@@ -1,6 +1,11 @@
 allowBuilds:
-  - sharp
-  - unrs-resolver
-  - prisma
-  - "@prisma/client"
-  - "@prisma/engines"
+  '0': sharp
+  '1': unrs-resolver
+  '2': prisma
+  '3': '@prisma/client'
+  '4': '@prisma/engines'
+  '@prisma/client': false
+  '@prisma/engines': false
+  prisma: false
+  sharp: false
+  unrs-resolver: false
