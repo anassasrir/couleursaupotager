@@ -7,6 +7,7 @@
 
 ## 2. Validation & Commits
 - Pour toute validation finale et envoi de code, déléguez systématiquement la tâche au sub-agent `@qa-committer`.
+- Pour toute modification de la structure de données ou problème de connexion à Supabase, déléguez la tâche au sub-agent `@db-expert`.
 - Ne jamais forcer un commit (`--no-verify`) si les tests ou audits échouent.
 
 ## 3. Standards Techniques
